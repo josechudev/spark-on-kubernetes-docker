@@ -4,8 +4,8 @@ ARG LIVY_BUILDER=sasnouskikh/livy-builder:0.3
 ### Livy Builder Container
 FROM $LIVY_BUILDER as build
 
-ARG LIVY_GITHUB_REPO=jahstreet/incubator-livy
-ARG LIVY_GITHUB_BRANCH=merge/first
+ARG LIVY_GITHUB_REPO=josechudev/incubator-livy
+ARG LIVY_GITHUB_BRANCH=feature/ingress-api-update
 # ARG LIVY_GITHUB_BRANCH=v0.8.0/spark-3.0.0
 
 RUN git clone https://github.com/${LIVY_GITHUB_REPO}.git --branch ${LIVY_GITHUB_BRANCH} --single-branch --depth=50 && \

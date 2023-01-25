@@ -4,7 +4,7 @@ jobs:
     branches:
       only:
       - master
-      - develop
+      - feature/ingress-api-update
     docker:
     - image: docker:18.06
     steps:
@@ -13,5 +13,5 @@ jobs:
     - run:
         name: docker-hub
         environment:
-        - DOCKERHUB_REPO: sasnouskikh
+        - DOCKERHUB_REPO: jchudb93
         command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD; set -x; for repo in "spark-base" "spark" "livy" "livy-spark" "jupyter"; do for script in $(find ./$repo/ -name build.sh); do if [ -n $script ]; then $script; fi; done; done
