@@ -14,4 +14,4 @@ jobs:
         name: docker-hub
         environment:
         - DOCKERHUB_REPO: jchudb93
-        command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD; set -x; for repo in "livy-spark"; do for script in $(find ./$repo/ -name build.sh); do if [ -n $script ]; then $script; fi; done; done
+        command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD; set -x; for repo in "livy"; do for script in $(find ./$repo/ -name build.sh); do if [ -n $script ]; then $script; fi; done; done
